@@ -148,7 +148,9 @@ Module.register('MMM-ip', {
             header.classList.add('bright');
             header.innerHTML = this.translate('NETWORK_INTERFACES');
             appendTo.appendChild(header);
-        }
+        } else {
+            appendTo.classList.add('align-left');
+	}
         for (let i = 0; i < typeKeys.length; i += 1) {
             if ((this.config.showType === 'both' || this.config.showType === typeKeys[i]) && this.types.indexOf(typeKeys[i]) !== -1) {
                 const familyKeys = Object.keys(this.ips[typeKeys[i]]);
